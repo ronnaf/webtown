@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+.idea
+.idea/.gitignore
+.idea/comic-reader-v2.iml
+.idea/misc.xml
+.idea/modules.xml
+yarn-error.log
+build/
