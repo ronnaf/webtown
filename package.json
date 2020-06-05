@@ -25,7 +25,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "electron": "^9.0.1"
-  }
+  "devDependencies": {}
 }
