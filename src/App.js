@@ -6,7 +6,6 @@ const Colors = {
 
 const App = () => {
   const [folderName, setFolderName] = React.useState(null);
-  const [images, setImages] = React.useState([]);
   const [chapters, setChapters] = React.useState([]);
   const [currentChapterIndex, setCurrentChapterIndex] = React.useState(0);
 
@@ -34,7 +33,7 @@ const App = () => {
 
     // convert chapter objects to array
     const chapterArray = [];
-    Object.keys(chaptersAsObjects).map(chapterKey => {
+    Object.keys(chaptersAsObjects).forEach(chapterKey => {
       const images = chaptersAsObjects[chapterKey];
       _sortAlphabetically(images, 'name');
       chapterArray.push({ chapterKey, images })
@@ -67,7 +66,6 @@ const App = () => {
 
     setCurrentChapterIndex(0);
     setChapters(chapterArray);
-    setImages(arr);
   };
 
   const next = () => {
@@ -143,7 +141,7 @@ const App = () => {
           {chapters[currentChapterIndex]?.images.map((file, i) => {
             const src = URL.createObjectURL(file);
             return (
-              <img src={src} style={{ width: 'inherit', marginTop: i === 0 ? 0 : -4 }} />
+              <img alt={`${file.name}`} src={src} style={{ width: 'inherit', marginTop: i === 0 ? 0 : -4 }} />
             )
           })}
         </div>
